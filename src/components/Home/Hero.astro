@@ -1,0 +1,32 @@
+---
+import { Image } from 'astro:assets'
+---
+
+<section id="hero" class="h-screen pt-28">
+	<div class="container mx-auto flex h-4/5 flex-col items-center gap-4 px-4 md:flex-row">
+		<div class="flex flex-col gap-4">
+			<h1 class="leading-non text-4xl font-bold md:text-5xl lg:text-6xl">
+				Custom Web Design<br />No Upfront <span class="text-primary">Costs</span>
+			</h1>
+			<p class="w-4/5 text-xl font-normal text-black/80 dark:text-white/80">
+				No templates. No page builders or Wordpress. Only high-quality website starting from $149/mo
+			</p>
+			<button
+				class="mt-2 w-fit bg-primary px-[1.25em] py-[.75em] transition-all hover:-translate-y-1 hover:scale-105 hover:shadow-lg"
+				>I'm Interested!</button
+			>
+		</div>
+
+		<div
+			class="relative h-fit before:absolute before:-bottom-4 before:-left-4 before:-z-10 before:h-full before:w-full before:rounded before:bg-primary before:content-[''] md:before:shadow-xl lg:w-2/3"
+		>
+			<Image
+				height={500}
+				width={800}
+				src="https://images.pexels.com/photos/39284/macbook-apple-imac-computer-39284.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+				alt="A mockup of computer and tablet"
+				class="h-auto w-full rounded object-cover"
+			/>
+		</div>
+	</div>
+</section>

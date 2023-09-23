@@ -1,0 +1,163 @@
+---
+const navigationLinks = [
+	{
+		name: 'Home',
+		href: '/',
+	},
+	{
+		name: 'Services',
+		href: '/services',
+	},
+	{
+		name: 'About',
+		href: '/about',
+	},
+	{
+		name: 'Contact',
+		href: '/contact',
+	},
+]
+---
+
+<header
+	class="fixed z-50 grid h-24 w-full items-center bg-white shadow shadow-black/5 dark:bg-black"
+	x-data="{ open: false }"
+>
+	<div class="container mx-auto flex items-center justify-between px-4 py-2">
+		<!-- Brand Logo -->
+		<a href="/" aria-label="Back to Home" role="button" tabindex="0">
+			<img
+				:src="!$store.theme.isDark ? '/assets/logo-max-black.svg' : '/assets/logo-max-white.svg'"
+				class="h-12"
+				height="48"
+				width="156"
+				alt="Changing Views Media Logo"
+			/>
+		</a>
+
+		<div class="flex items-center justify-between gap-4 lg:gap-12">
+			<!-- Desktop Navigation -->
+			<nav class="hidden lg:block">
+				<ul class="flex gap-8">
+					{
+						navigationLinks.map((link) => (
+							<li>
+								<a
+									class="text-xl tracking-wide transition-colors hover:text-accent"
+									href={link.href}
+								>
+									{link.name}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</nav>
+
+			<!-- Action Buttons -->
+			<button
+				type="button"
+				x-data
+				@click="$store.theme.toggle()"
+				class="rounded p-2 outline-none transition-colors hover:bg-black/5 hover:text-primary focus-visible:outline-accent dark:hover:bg-white/5"
+			>
+				<span class="sr-only">Toggle theme</span>
+				<svg
+					x-cloak
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke-width="1.5"
+					stroke="currentColor"
+					class="h-6 w-6"
+					:class="{'hidden': $store.theme.isDark}"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+					></path>
+				</svg>
+				<svg
+					x-cloak
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke-width="1.5"
+					stroke="currentColor"
+					class="h-6 w-6"
+					:class="{'hidden': !$store.theme.isDark}"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
+					></path>
+				</svg>
+			</button>
+
+			<button
+				type="button"
+				@click="open = !open"
+				@mousedown="if (open) $event.preventDefault()"
+				@keyup.escape="open = false"
+				aria-expanded="false"
+				:aria-expanded="open.toString()"
+				aria-controls="website-menu"
+				class="block rounded p-2 outline-none transition-colors hover:bg-black/5 hover:text-primary focus-visible:outline-accent dark:hover:bg-white/5 lg:hidden"
+			>
+				<span class="sr-only">Toggle mobile navigation</span>
+				<svg
+					x-cloak
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke-width="1.5"
+					stroke="currentColor"
+					class="h-6 w-6"
+					:class="{ 'hidden': open, 'block': !(open) }"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+				</svg>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke-width="1.5"
+					stroke="currentColor"
+					class="h-6 w-6"
+					:class="{ 'block': open, 'hidden': !(open) }"
+				>
+					<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+				</svg>
+			</button>
+
+			<nav
+				x-cloak
+				x-show="open"
+				@click.outside="open = false"
+				x-collapse
+				x-collapse.duration.500ms
+				class="absolute left-0 top-24 z-50 w-full bg-white p-8 before:absolute before:left-0 before:top-0 before:-z-40 before:h-full before:w-full before:bg-black/5 before:content-['']"
+			>
+				<ul class="flex flex-col justify-center divide-y divide-black/10 text-center">
+					{
+						navigationLinks.map((link) => (
+							<li class="w-full py-4">
+								<a
+									class="text-xl tracking-wide transition-colors hover:text-accent"
+									href={link.href}
+								>
+									{link.name}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header>

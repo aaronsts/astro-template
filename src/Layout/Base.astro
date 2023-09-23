@@ -1,0 +1,59 @@
+---
+import Header from '../components/Layout/Header.astro'
+import '../base.css'
+
+import '@fontsource/barlow/300.css'
+import '@fontsource/barlow/500.css'
+import '@fontsource/barlow/700.css'
+---
+
+<html
+	lang="en"
+	class="h-full selection:bg-accent selection:text-white"
+	x-cloak
+	x-data
+	:class="{ 'dark': $store.theme.isDark }"
+>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body class="h-full bg-white text-black dark:bg-black dark:text-white">
+		<Header />
+		<slot />
+	</body>
+	<script>
+		import Alpine from 'alpinejs'
+		import collapse from '@alpinejs/collapse'
+
+		Alpine.plugin(collapse)
+
+		Alpine.store('theme', {
+			init() {
+				this.dark = (() => {
+					if (typeof localStorage !== undefined && localStorage.getItem('theme')) {
+						return localStorage.getItem('theme') === 'dark'
+					}
+					if (window.matchMedia('(prefer-color-scheme: dark)').matches) {
+						return true
+					}
+					return false
+				})()
+			},
+
+			isDark: false,
+
+			toggle() {
+				this.isDark = !this.isDark
+				localStorage.setItem('theme', this.isDark ? 'dark' : 'light')
+			},
+		})
+
+		window.Alpine = Alpine
+
+		Alpine.start()
+	</script>
+</html>
