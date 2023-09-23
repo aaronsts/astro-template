@@ -1,31 +1,37 @@
 ---
 import { Image } from 'astro:assets'
+import heroImage from '../../images/heroImage.jpg'
 ---
 
-<section id="hero" class="h-screen pt-28">
-	<div class="container mx-auto flex h-4/5 flex-col items-center gap-4 px-4 md:flex-row">
-		<div class="flex flex-col gap-4">
-			<h1 class="leading-non text-4xl font-bold md:text-5xl lg:text-6xl">
-				Custom Web Design<br />No Upfront <span class="text-primary">Costs</span>
+<section id="hero" class="h-screen pt-28 text-white">
+	<div class="container mx-auto flex h-4/5 flex-col items-center justify-center text-center gap-4 px-4 md:flex-row">
+		<div class="flex flex-col items-center gap-4">
+			<h1 class="leading-none  text-4xl font-black md:text-5xl lg:text-7xl">
+				Caring for trees <br> Preserving <span class="text-primary">Beauty</span> 
 			</h1>
-			<p class="w-4/5 text-xl font-normal text-black/80 dark:text-white/80">
-				No templates. No page builders or Wordpress. Only high-quality website starting from $149/mo
+			<p class="w-4/5 text-xl font-normal text-white">
+				Over 40 years, Heartwood has evolved into an award winning, nationally recognized industry leader.
 			</p>
-			<button
-				class="mt-2 w-fit bg-primary px-[1.25em] py-[.75em] transition-all hover:-translate-y-1 hover:scale-105 hover:shadow-lg"
-				>I'm Interested!</button
-			>
+			<div class="flex flex-wrap gap-4">
+				<button
+				class="mt-4 w-fit bg-primary text-lg px-[1.5em] py-[.75em] border border-primary transition-all hover:-translate-y-1 hover:scale-105 hover:shadow-lg rounded"
+				>Get a quote</button>
+				<button
+				class="mt-4 w-fit bg-transparent border border-white text-lg px-[1.5em] py-[.75em] transition-all hover:-translate-y-1 hover:scale-105 hover:shadow-lg rounded hover:bg-white hover:text-black"
+				>Learn more</button
+				>
+			</div>
 		</div>
 
 		<div
-			class="relative h-fit before:absolute before:-bottom-4 before:-left-4 before:-z-10 before:h-full before:w-full before:rounded before:bg-primary before:content-[''] md:before:shadow-xl lg:w-2/3"
+			class="absolute h-screen overflow-hidden top-0 left-0 -z-20 w-full before:content-[''] before:bg-black/60 before:absolute before:top-0 before:left-0 before:w-full before:h-full before:z-0"
 		>
 			<Image
-				height={500}
-				width={800}
-				src="https://images.pexels.com/photos/39284/macbook-apple-imac-computer-39284.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+				height={1280}
+				width={1920}
+				src={heroImage}
 				alt="A mockup of computer and tablet"
-				class="h-auto w-full rounded object-cover"
+				class="h-screen w-full object-cover"
 			/>
 		</div>
 	</div>
