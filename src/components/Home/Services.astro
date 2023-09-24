@@ -1,34 +1,42 @@
-<section id="services" class="h-fit bg-accent/20">
+---
+import Icon from "astro-icon";
+
+---
+
+<section id="services" class="h-fit">
 	<div class="container mx-auto flex flex-col gap-4 px-4 py-16">
 		<div>
-			<span class="text-lg uppercase tracking-widest text-black/80 dark:text-white/80"
+			<span class="text-lg uppercase tracking-widest  text-black/80 dark:text-white/80"
 				>services</span
 			>
-			<h2>What we do</h2>
+			<h2>How can we <span class="text-primary">help</span> you</h2>
 		</div>
-		<div class="flex justify-between">
-			<p class="max-w-[60ch]">
-				We specialize in providing custom website development and design services, crafted for small
-				businesses. All our website are custom coded by hand to give you the best performance
-				possible.
-			</p>
-			<div class="relative">
-				<p class="text-5xl font-bold uppercase">Optimized for</p>
-				<div class="relative h-12 w-44 overflow-hidden text-primary">
-					<div class="animate-openclose absolute flex flex-col">
-						<span class="text-5xl font-bold">SEO</span>
-						<span class="text-5xl font-bold">MOBILE</span>
-						<span class="text-5xl font-bold">YOU</span>
-					</div>
+		<div class="py-6 px-8  grid grid-cols-1 lg:grid-cols-3 gap-12">
+			<div class="bg-accent/10 border border-accent rounded flex flex-col gap-2  p-4 w-full">
+				<div class=" -mt-12 -mr-12 self-end bg-background dark:bg-text p-2 rounded border border-accent">
+					<Icon name='axe' alt="Axe Icon" class="w-12 h-12 self-center  fill-accent dark:text-secondary -rotate-45" width={48} height={48} />
 				</div>
+					<h3 class="text-2xl md:text-3xl ">Tree Removal</h3>
+				<p class="text-base">Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				<a href="#" class="mt-4 w-fit self-end text-center h-fit bg-transparent border border-black text-base px-[1.5em] py-[.75em] transition-all hover:-translate-y-1 hover:scale-105 hover:shadow-lg rounded  hover:bg-black hover:text-white dark:border-background dark:hover:text-black dark:hover:bg-background">Learn more</a>
+			</div>
+			<div class="bg-accent/10 border border-accent rounded flex flex-col gap-2 w-full p-4">
+				<div class="-mt-12 -mr-12 self-end bg-background dark:bg-text p-2 rounded border border-accent">
+					<Icon name='scissor' alt="Axe Icon" class="w-12 h-12 self-center dark:bg-text  text-accent  stroke-[0.75] rotate-90" width={48} height={48} />
+				</div>
+					<h3 class="text-2xl md:text-3xl ">Hedge Services</h3>
+				<p class="text-base">Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				<a href="#" class="mt-4 w-fit self-end text-center h-fit bg-transparent border border-black text-base px-[1.5em] py-[.75em] transition-all hover:-translate-y-1 hover:scale-105 hover:shadow-lg rounded  hover:bg-black hover:text-white dark:border-background dark:hover:text-black dark:hover:bg-background">Learn more</a>
+			</div>
+			<div class="bg-accent/10 border border-accent rounded flex flex-col gap-2 w-full p-4">
+				<div class=" -mt-12 -mr-12 self-end bg-background p-2 rounded dark:bg-text border border-accent">
+					<Icon name='fire' alt="Axe Icon" class="w-12 h-12 self-center  text-accent dark:bg-text  stroke-[.75]" width={48} height={48} />
+				</div>
+					<h3 class="text-2xl md:text-3xl ">Controlled Burning</h3>
+				<p class="text-base">Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				<a href="#" class="mt-4 w-fit self-end text-center h-fit bg-transparent border border-black text-base px-[1.5em] py-[.75em] transition-all hover:-translate-y-1 hover:scale-105 hover:shadow-lg rounded  hover:bg-black hover:text-white dark:border-background dark:hover:text-black dark:hover:bg-background">Learn more</a>
 			</div>
 		</div>
-		<h2>Designed and developed for you</h2>
-		<p class="max-w-[60ch]">
-			Your website build will start with a distinctive design that captures attention, delivers
-			information, and sets you apart from your competitors. Share what makes your company
-			different, and leave the rest to us.
-		</p>
-		<a href="#" class="w-fit text-lg text-black/80 underline hover:text-black/40">Learn more</a>
+			
 	</div>
 </section>

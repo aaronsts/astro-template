@@ -9,11 +9,16 @@ module.exports = {
 		},
 		extend: {
 			colors: {
-				black: "#0F0905",
-				white: "#F7F5F3",
-				primary: "#B0AA48",
-				accent: "#0F5257",
+				text: "#0f0905",
+				background: "#f7f5f3",
+				primary: "#b1ac48",
+				secondary: "#efeedc",
+				accent: "#0f5257",
+
+				white: "#f7f5f3",
+				black: "#0f0905",
 			},
+
 			keyframes: {
 				openclose: {
 					"0%": {
