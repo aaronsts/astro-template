@@ -1,5 +1,5 @@
 ---
-const navigationLinks = [
+export const navigationLinks = [
 	{
 		name: 'Home',
 		href: '/',
@@ -27,7 +27,7 @@ const navigationLinks = [
 		<!-- Brand Logo -->
 		<a href="/" aria-label="Back to Home" role="button" tabindex="0">
 			<img
-				:src="!$store.theme.isDark ? '/assets/logo-max-black.svg' : '/assets/logo-max-white.svg'"
+				:src="!$store.theme.isDark ? '/assets/logo-black.svg' : '/assets/logo-white.svg'"
 				class="h-12"
 				height="48"
 				width="156"

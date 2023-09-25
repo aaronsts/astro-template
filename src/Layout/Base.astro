@@ -2,13 +2,14 @@
 import Header from '../components/Layout/Header.astro'
 import '../base.css'
 
-import '@fontsource-variable/work-sans';
-import '@fontsource-variable/playfair-display';
+import '@fontsource-variable/work-sans'
+import '@fontsource-variable/playfair-display'
+import Footer from '../components/Layout/Footer.astro'
 ---
 
 <html
 	lang="en"
-	class="h-full selection:bg-accent selection:text-white "
+	class="h-full selection:bg-accent selection:text-white"
 	x-cloak
 	x-data
 	:class="{ 'dark': $store.theme.isDark }"
@@ -23,6 +24,7 @@ import '@fontsource-variable/playfair-display';
 	<body class="h-full bg-background text-text dark:bg-text dark:text-background">
 		<Header />
 		<slot />
+		<Footer />
 	</body>
 	<script>
 		import Alpine from 'alpinejs'
