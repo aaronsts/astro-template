@@ -1,7 +1,7 @@
 ---
 import Header from '../components/Layout/Header.astro'
 import '../base.css'
-
+import { AstroSeo } from '@astrolib/seo'
 import '@fontsource-variable/work-sans'
 import '@fontsource-variable/playfair-display'
 import Footer from '../components/Layout/Footer.astro'
@@ -14,14 +14,54 @@ import Footer from '../components/Layout/Footer.astro'
 	x-data
 	:class="{ 'dark': $store.theme.isDark }"
 >
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="sitemap" href="/sitemap-index.xml" />
-		<title>Astro</title>
-	</head>
+	<head> </head>
+	<AstroSeo
+		title="Title"
+		description="A short description"
+		canonical="https://changingviews.media"
+		openGraph={{
+			url: 'https://changingviews.media',
+			title: 'Title',
+			description: 'A short description',
+			images: [
+				{
+					url: 'https://www.changingviews.media/opengraph/social-og.jpg',
+					width: 1200,
+					height: 630,
+					alt: 'Social open graph',
+					type: 'image/jpeg',
+				},
+				{
+					url: 'https://www.changingviews.media/opengraph/twitter-og.jpg',
+					width: 4096,
+					height: 4096,
+					alt: 'Twitter open graph',
+					type: 'image/jpeg',
+				},
+				{ url: 'https://www.changingviews.media/opengraph/social-og.jpg' },
+				{ url: 'https://www.changingviews.media/opengraph/twitter-og.jpg' },
+			],
+		}}
+	/>
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<meta name="viewport" content="width=device-width" />
+	<meta name="author" content="Changing Views Media" />
+	<meta name="generator" content={Astro.generator} />
+	<link rel="sitemap" href="/sitemap-index.xml" />
+
+	<!-- Favicon -->
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+	<link rel="manifest" href="/site.webmanifest" />
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+	<meta name="msapplication-TileColor" content="#da532c" />
+	<meta name="theme-color" content="#ffffff" />
+
+	<title>Astro</title>
+
 	<body class="h-full bg-background text-text dark:bg-text dark:text-background">
 		<Header />
 		<slot />
@@ -58,4 +98,6 @@ import Footer from '../components/Layout/Footer.astro'
 
 		Alpine.start()
 	</script>
+
+
 </html>
