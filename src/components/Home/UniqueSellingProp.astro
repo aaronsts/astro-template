@@ -4,48 +4,57 @@ import Card from '../Utils/Card.astro'
 const uniqueSellingPoints = [
 	{
 		title: 'Safety First',
-		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
 	},
 	{
 		title: 'Years of Experience',
-		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
 	},
 	{
 		title: 'Certified Experts',
-		description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+		description:
+			'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
 	},
 	{
 		title: 'Transparent Pricing',
-		description: "Ad minim veniam, quis nostrud exercitation  laboris nisi ut aliquip ex ea commodo consequat. ",
+		description:
+			'Ad minim veniam, quis nostrud exercitation  laboris nisi ut aliquip ex ea commodo consequat. ',
 	},
 	{
 		title: 'Latest Machinery',
-		description: "Veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+		description:
+			'Veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
 	},
 	{
 		title: 'Owner on site',
-		description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+		description:
+			'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
 	},
 ]
 ---
 
 <section id="whyChooseUs" class="bg-secondary dark:bg-accent">
-	<div class="container mx-auto px-4 py-16 flex flex-col">
+	<div class="container mx-auto flex flex-col px-4 py-16">
 		<div>
 			<span class="text-lg uppercase tracking-widest text-black/80 dark:text-white/80"
 				>Why Choose us</span
 			>
 			<h2>What we do <span class="text-accent dark:text-secondary">Different</span></h2>
 		</div>
-		<div class="my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-[1px] bg-accent/40 dark:bg-secondary/40">
+		<div
+			class="my-4 grid grid-cols-1 grid-rows-2 gap-[1px] bg-accent/40 dark:bg-secondary/40 md:grid-cols-2 lg:grid-cols-3"
+		>
 			{
 				uniqueSellingPoints.map((point) => (
 					<Card title={point.title} description={point.description} />
 				))
 			}
 		</div>
-		<a href="#"
-				class="mt-2 md:mt-4 w-fit inline-block self-center bg-primary text-black dark:text-white text-lg px-[1.5em] py-[.75em] border border-primary transition-all hover:-translate-y-1 hover:scale-105 hover:shadow-lg rounded"
-				>Get a quote TODAY!</a>
+		<a
+			href="#"
+			class="mt-2 inline-block w-fit self-center rounded border border-primary bg-primary px-[1.5em] py-[.75em] text-lg text-black transition-all hover:-translate-y-1 hover:scale-105 hover:shadow-lg dark:text-white md:mt-4"
+			>Get a quote TODAY!</a
+		>
 	</div>
 </section>

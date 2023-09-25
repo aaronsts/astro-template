@@ -1,0 +1,54 @@
+---
+import Review from '../Utils/Review.astro'
+import { Image } from 'astro:assets'
+import reviewImage from '../../assets/images/reviewImage.jpg'
+
+const reviews = [
+	{
+		title: 'Always professional',
+		desc: ' Quaerat consectetur null atempora rerum, hic doloremque!',
+		name: 'Brie Johnson',
+		date: '15 apr 2023',
+	},
+	{
+		title: 'Quick response time',
+		desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat consectetur null atempora rerum, hic doloremque!',
+		name: 'Tim White',
+		date: '30 aug 2023',
+	},
+	{
+		title: 'Beautiful hedges',
+		desc: 'Them wherein our i, beast green living was. stars so and which signs third second after seasons under fowl day grass. Earth he sea him may shall open face creepeth',
+		name: 'Charlotte DeVille',
+		date: '05 sep 2023',
+	},
+]
+---
+
+<section id="reviews" class="bg-accent/10">
+	<div class="container mx-auto flex flex-col gap-4 px-4 py-16">
+		<div>
+			<span class="text-lg uppercase tracking-widest text-black/80 dark:text-white/80">reviews</span
+			>
+			<h2>Don't take our <span class="text-primary">word</span> for it</h2>
+		</div>
+		<div class="flex flex-col items-center justify-between gap-8 md:flex-row">
+			<div class="divide-y divide-accent/40">
+				{
+					reviews.map(({ title, desc, name, date }) => (
+						<Review title={title} desc={desc} name={name} date={date} />
+					))
+				}
+			</div>
+			<div class="w-full md:w-1/2">
+				<Image
+					src={reviewImage}
+					alt="A tree in the morning sunlight"
+					width={1920}
+					height={1280}
+					class="h-full rounded object-cover"
+				/>
+			</div>
+		</div>
+	</div>
+</section>

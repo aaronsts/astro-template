@@ -1,0 +1,30 @@
+---
+const {
+	href = '#',
+	primary = false,
+	secondary = false,
+	outlineWhite = false,
+	outlineBlack = false,
+	class: className = '',
+} = Astro.props
+
+const primaryStyle =
+	'min-w-fit inline-block w-fit self-center rounded border border-primary bg-primary px-[1.5em] py-[.75em] text-lg text-black transition-all hover:-translate-y-1 hover:scale-105 hover:shadow-lg dark:text-white'
+const secondaryStyle =
+	'min-w-fit inline-block w-fit self-center rounded border border-secondary bg-secondary px-[1.5em] py-[.75em] text-lg text-black transition-all hover:-translate-y-1 hover:scale-105 hover:shadow-lg dark:text-white'
+const outlineStyleWhite =
+	'min-w-fit inline-block w-fit self-center rounded border border-white bg-transparent px-[1.5em] py-[.75em] text-lg text-white transition-all hover:-translate-y-1 hover:scale-105 hover:shadow-lg hover:bg-white hover:text-black '
+const outlineStyleBlack =
+	'min-w-fit inline-block w-fit self-center rounded border border-black bg-transparent px-[1.5em] py-[.75em] text-lg text-black transition-all hover:-translate-y-1 hover:scale-105 hover:shadow-lg hover:bg-black hover:text-white '
+---
+
+<a
+	href={href}
+	class:list={[
+		{ [primaryStyle]: primary },
+		{ [secondaryStyle]: secondary },
+		{ [outlineStyleWhite]: outlineWhite },
+		{ [outlineStyleBlack]: outlineBlack },
+		{ [className]: true },
+	]}><slot /></a
+>

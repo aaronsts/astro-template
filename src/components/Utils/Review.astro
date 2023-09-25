@@ -1,0 +1,14 @@
+---
+const { title, desc, name, date } = Astro.props
+---
+
+<div class="grid w-full gap-2 p-4 hover:bg-accent/10 md:max-w-lg">
+	<h3 class="text-xl font-bold">{title}</h3>
+	<p class="text-base">
+		{desc}
+	</p>
+	<div class="mt-2 flex justify-between">
+		<p class="text-sm font-medium uppercase">{name}</p>
+		<p class="text-sm font-light uppercase">{date}</p>
+	</div>
+</div>

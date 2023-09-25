@@ -1,16 +1,37 @@
-<section id="about">
-  <div class="container mx-auto px-4 py-16 flex flex-col">
-    <div>
-			<span class="text-lg uppercase tracking-widest text-black/80 dark:text-white/80"
-				>About</span
-			>
-			<h2>How we got <span class="text-accent dark:text-secondary">started</span></h2>
-		</div>
-    <div>
+---
+import { Image } from 'astro:assets'
+import aboutImage from '../../assets/images/aboutImage.jpg'
+---
 
-      <p>
-        Fruit is their fill meat, hath abundantly place meat don't stars so and which signs third second after seasons under fowl day grass. Earth he sea him may shall open face creepeth of given may multiply. Them wherein our i, beast green living was. And face of forth days for his lesser earth thing sea fourth. Brought. Fifth of form. Together. Female whose said lights greater open gathered gathering.
-      </p>
-    </div>
-    </div>
+<section id="about">
+	<div class="container mx-auto flex flex-col-reverse gap-8 px-4 py-16 md:flex-row">
+		<div class="w-full md:w-1/2">
+			<Image
+				src={aboutImage}
+				alt="Man sitting in tree while cutting it down with a chainsaw"
+				width={1920}
+				height={3167}
+				class="max-h-[550px] object-cover object-center"
+			/>
+		</div>
+		<div class="flex w-full flex-col gap-2 lg:w-1/2">
+			<div>
+				<span class="text-lg uppercase tracking-widest text-black/80 dark:text-white/80">About</span
+				>
+				<h2>How we got <span class="text-accent dark:text-secondary">started</span></h2>
+			</div>
+			<p>
+				Fruit is their fill meat, hath abundantly place meat don't stars so and which signs third
+				second after seasons under fowl day grass. Earth he sea him may shall open face creepeth of
+				given may multiply. Them wherein our i, beast green living was. And face of forth days for
+				his lesser earth thing sea fourth. Brought. Fifth of form. Together. Female whose said
+				lights greater open gathered gathering.
+			</p>
+			<a
+				href="#"
+				class="mt-4 inline-block w-fit rounded border border-black bg-transparent px-[1.5em] py-[.75em] text-lg text-black transition-all hover:-translate-y-1 hover:scale-105 hover:bg-black hover:text-white hover:shadow-lg dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-black md:mt-4"
+				>Learn our history</a
+			>
+		</div>
+	</div>
 </section>
